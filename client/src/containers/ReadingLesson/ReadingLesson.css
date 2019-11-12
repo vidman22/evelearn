@@ -1,0 +1,352 @@
+.ReadingLessonWrapper {
+  width: 85%;
+  padding: 3%;
+  margin: auto;
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  /* background: white;
+  border: 1px solid #eee; */
+  /* box-shadow: 2px 1px 2px #ccc; */
+}
+
+.ReadingEnvironment{
+  display: flex;
+  flex-direction: row;
+}
+
+.ReadingPassage{
+	/* display: inline-block; */
+  /* background: #edd1b0; #dbe1f1; */
+  color: black;
+	vertical-align: top;
+	font-size: 20px;
+  line-height: 37px;
+  max-height: 700px;
+  overflow: scroll;
+	width: 98%;
+	margin: 2%;
+	padding: 3%;
+	border-radius: 3px;
+  border: 1px solid #eee;
+  white-space: pre-line;
+}
+.ReadingCompQuestionsWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+	margin: 2%;
+	background: white;
+	border: 1px solid #eee;
+}
+
+.ReadingPassage form{
+  display: inline;
+}
+
+.ReadingPassage span{
+  display: block;
+}
+
+.ReadingControlButtons{
+  /* position: absolute; */
+  /* top: 86px; */
+  /* display: flex; */
+  /* background: white; */
+  height: 80px;
+  width: 100%;
+}
+
+.InsertTextWrapper p{
+  float: left;
+  margin: 8px 10px;
+}
+
+.InsertTextHeader{
+  display: block;
+  border-bottom: 1px solid #eee;
+  margin: 12px 12px;
+}
+
+.InsertTextString{
+  display: block;
+  background: rgba(245, 245, 124, 0.904);
+  margin: 12px auto;
+  width: 80%; 
+}
+
+.OmissionWithOptionsElement{
+  display: block; 
+  border-bottom: 1px solid #eee;
+  margin: 3px 0;
+}
+.OmissionWithOptionsElement p{
+  float: left;
+  margin: 8px 10px;
+}
+.OmissionWithOptionsButtonWrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+}
+.OmissionWithOptionsButton{
+  background: white;
+  font-size: 14px;
+  border: 1px solid black;
+  min-width: 60px;
+  padding: 8px 8px;
+  margin: 40px 12px;
+
+}
+
+.OmissionWithOptionsButton:disabled{
+  border: 1px solid #00c4c3;
+}
+
+
+.OmissionWithOptionsButton:hover{
+  cursor: pointer;
+  box-shadow: 0 0 4px #eee;
+  color: #00c4c3;
+
+}
+
+.white{
+  background: white;
+}
+.peach{
+  background: #edd1b0;
+}
+.blue{
+  background: #96adfc;
+}
+.turquoise{
+  background: #a5f7e1;
+}
+
+.ReactTimerWrapper{
+  display: inline-block;
+  margin: -42px 0 0px 65%;
+}
+
+.SpeedReadingWrapper {
+	display: inline-block;
+	background: none;
+	margin: 18px 0 0 25px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.SpeedReadingWrapper h4{
+  font-weight: 400;
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+.BackgroundColorContainer{
+  margin: 8px;
+
+}
+
+.StyleRadio{
+  margin: 12px 3px;
+}
+
+.CheckLessonButton,
+.StartReadingButton{
+  	width: 120px;
+  	height: 60px;
+    margin-right: 2px;
+  	font-size: 18px;
+  	background: #00c4c3;
+    border: none;
+  	color: white;
+}
+
+.CheckLessonButton:hover,
+.StartReadingButton:hover {
+  color: black;
+  border: initial;
+}
+
+
+.CheckLessonButton:disabled,
+.StartReadingButton:disabled {
+  background: #00c4c3;
+  opacity: .5;
+  color: black;
+}
+
+.CheckLessonButton{
+  margin: 0 0 0 80%;
+}
+
+.StyleCheckLabel{
+	
+	display: block;
+	margin: 12px 0 12px 12px;
+}
+
+.ReadinSpeedSelect {
+	margin: 12px 0 12px 0;
+	display: block;
+	position: relative;
+}
+
+.ReadinSpeedSelect select{
+	display: none;
+}
+
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.Slider {
+    margin: 0 0 0 12px;
+    -webkit-appearance: none;
+    width: 150px;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.Slider:hover {
+  opacity: 1;
+}
+
+.Slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #00c4c3;
+  cursor: pointer;
+}
+
+.Slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #00c4c3;
+  cursor: pointer;
+}
+
+.DeleteReading{
+  border: none;
+  background: none;
+  display: block;
+  float: right;
+  margin: -35px 0 0 97%;
+  color: black;
+  transition: 0.1s ease-in;
+}
+
+.DeleteReading:hover{
+  color: #ccc;
+}
+
+
+
+.ReadingPassage table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid black;
+}
+
+.ReadingPassage table tr {
+  border: none;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.ReadingPassage table thead tr {
+  background: #f5f5f5;
+  font-weight: bold;
+}
+
+.ReadingPassage table td {
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  padding: .5em;
+  position: relative;
+}
+
+/* for nested tables */
+.ReadingPassage table td > table {
+  width: 100%;
+}
+
+td > p:first-child {
+  margin-top: 0;
+}
+
+td > p:last-child {
+  margin-bottom: 0;
+}
+
+
+@media screen and (max-width: 640px) {
+  .CheckLessonButton,
+  .StartReadingButton{
+    width: 90px;
+    height: 40px;
+    margin-right: 2px;
+    margin-top: 8px;
+    font-size: 18px;
+    background: #00c4c3;
+    border: none;
+    color: white;
+}
+.DeleteReading{
+  margin: 12px 0 0 77%;
+}
+
+.CheckLessonButton{
+  margin: 0 0 0 70%;
+}
+  .ReadingPassage{
+    width: 99%;
+    margin: 16px 0 0 -12px;
+  }
+  .LessonSentencesWrapper {
+    width: 92%;
+    margin: auto;
+  }
+
+}

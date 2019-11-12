@@ -1,0 +1,69 @@
+.InputAltWrapper {
+  display: block;
+  width:50%;
+  margin: 18px 0 9px 8%;
+}
+
+input.InputAlt {
+  display: inline-block;
+  width: 90%;
+  margin:-10px 0 0 0;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  background: none;
+  height:23px;
+  line-height:23px;
+  font-size:18px;
+  border-bottom:solid 2px #ccc;
+  transition:all .23s ease-in
+
+}
+
+.InputAltWrapper p{
+  display: block;
+  color: red;
+}
+
+.InputAltWrapper input{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.answerCheck {
+
+  margin-top: 5px;
+}
+
+.InputAlt:focus{
+	outline: none;
+}
+
+.RemoveAlt{
+  display: inline-block;
+  margin-top: -10px;
+}
+
+
+@media screen and (max-width: 640px) {
+
+  .InputAltWrapper {
+    margin: 18px 0 9px 0;
+  }
+
+  .AltAddWrapper {
+    margin: 0 0 0 0;
+  }
+
+  input.InputAlt {
+    width: 95%;
+/*    margin: 0 0 2px 0;*/
+    font-size: 18px;
+    height:25px;
+    line-height:20px;
+  }
+  .RemoveAlt {
+    display: inline-block;
+    float: left;
+    margin: 0 0 0 0;
+  }
+}
