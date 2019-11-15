@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
 import { Prompt, withRouter } from 'react-router-dom';
-import { CSSTransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import { Value, Mark} from 'slate';
 import Slate from '../Slate/Slate';
 import InputReadingOmission from '../../components/InputReadingOmission/InputReadingOmission';
 import InputCompOption from '../../components/InputCompOption/InputCompOption';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import MinusSVG from '../../components/SVG/MinusSVG';
-import PlusSVG from '../../components/SVG/PlusSVG';
-import XMarkSVG from '../../components/SVG/XMarkSVG';
+import { faChevronRight, faChevronLeft, faMinusCircle, faTimes, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 
-import './CreateReadingLesson.css';
+import './CreateReading.css';
 
 let n = 0;
 
@@ -1568,7 +1565,7 @@ class CreateReadingLesson extends Component {
   							});
   						}
                   }}>
-				<CSSTransitionGroup
+				<CSSTransition
 					transitionName="addandremove"
 					transitionEnterTimeout={400}
 					transitionLeaveTimeout={300}>
@@ -1577,7 +1574,7 @@ class CreateReadingLesson extends Component {
 
                     <div className="InputReadingSentenceWrapper" key={formElement.id}>
                       <p>{Number(formElement.id) + 1}</p>
-							<XMarkSVG classname="DeleteSentence" onclick={() => this.removeElement(formElement.id)} />
+							<FontAwesomeIcon icon={faTimes} classname="DeleteSentence" onclick={() => this.removeElement(formElement.id)} />
                     	{formElement.config.type.value === 'omission' && (
                     	<InputReadingOmission
   	
@@ -1628,7 +1625,7 @@ class CreateReadingLesson extends Component {
 						
                           ))}
                             <div className="ElementAddReadingButtonWrapper" >
-								<PlusSVG onclick={() => this.addAnswer(formElement.id)} />
+								<FontAwesomeIcon icon={faPlusCircle} onclick={() => this.addAnswer(formElement.id)} />
                             </div>
 							
                         </div>
@@ -1688,7 +1685,7 @@ class CreateReadingLesson extends Component {
 						
                           	))}
                             	<div className="ElementAddReadingButtonWrapper" >
-									<PlusSVG onclick={() => this.addAnswer(formElement.id)} />
+									<FontAwesomeIcon icon={faPlusCircle} onclick={() => this.addAnswer(formElement.id)} />
                             	</div>
 							
                         	</div>
@@ -1722,11 +1719,11 @@ class CreateReadingLesson extends Component {
 										placeholder="Name option"
 									/>
 									<button className="InputInsertButton" type="button" onClick={() => this.addInputPlaceholder(formElement.id, index)}>Add Insert</button>
-									<MinusSVG classnmae="RemoveInsert" onclick={() => this.removeIndex(formElement.id, index)} />
+									<FontAwesomeIcon icon={faMinusCircle} classnmae="RemoveInsert" onclick={() => this.removeIndex(formElement.id, index)} />
 								</div>
 								))}
 							    	<div className="ElementAddReadingButtonWrapper" >
-										<PlusSVG onclick={() => this.addIndex(formElement.id)} />
+										<FontAwesomeIcon icon={faPlusCircle} onclick={() => this.addIndex(formElement.id)} />
                             		</div>
 								</div>
 							)}
@@ -1776,7 +1773,7 @@ class CreateReadingLesson extends Component {
 						
                           		))}
                             <div className="ElementAddReadingButtonWrapper" >
-								<PlusSVG onclick={() => this.addAnswer(formElement.id)} />
+							<FontAwesomeIcon icon={faPlusCircle} onclick={() => this.addAnswer(formElement.id)} />
                             </div>
 							
                         </div>
@@ -1790,7 +1787,7 @@ class CreateReadingLesson extends Component {
             		</div>
             		)
 				  })}
-				</CSSTransitionGroup>
+				</CSSTransition>
             <div className="ExerciseButton" onClick={() => this.addForm()}>Add</div>
             <button className="CreateButton" type="submit" disabled={!this.state.formIsValid}>Create</button>
             </form>

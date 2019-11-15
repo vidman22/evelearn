@@ -23,11 +23,11 @@ body {
 	flex-direction: row;
 	/* overflow: hidden; */
 	height: 4.5rem;        /*82px;*/
-	background: /*#23A6D5;*/ linear-gradient(-45deg, #23D5AB, #23A6D5);
+	background: #0B3C5D;
 	margin-bottom: 10px;
 	font-weight: lighter;
 	width: 100%;
-	border-bottom: 4px solid #FFF800;
+	border-bottom: 4px solid #D9B310;
 	justify-content: center;
 	
 }
@@ -39,11 +39,11 @@ body {
 }
 
 .HeaderBrand {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Calistoga', cursive;
 	font-size: 40px;
-	font-weight: 400;
+	/* font-weight: 400; */
 	color: white;
-	margin: auto 0 auto 0;
+	margin: auto 0 auto 60px;
 }
 
 .LogoImage {
@@ -61,7 +61,7 @@ body {
 }
 
 .fa-search:hover{
-	color: #555;
+	color: rgb(29, 39, 49);
 	cursor: pointer;
 }
 
@@ -72,7 +72,7 @@ body {
 
 .SearchHeader form{
 	display: inline;
-  cursor: text;
+  	cursor: text;
 }
 
 
@@ -98,7 +98,7 @@ body {
 
 .SearchHeader input:focus{ 
 	outline: none;
-	border-bottom: 1px solid rgba(238, 255, 0, 0.685);
+	border-bottom: 1px solid  #D9B310 /* rgba(238, 255, 0, 0.685); */
 }
 
 .SearchHeader button{
@@ -114,11 +114,11 @@ body {
 
 
 #Create {
-	background: rgb(89, 233, 199);
+	background: #328CC1;
 	font-size: 22px;
 	padding: .75em;
 	text-align: center;
-	font-family: Open Sans, sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-weight: bolder;
 	color: white;
 	margin: 4px 0 4px 150px;
@@ -136,11 +136,11 @@ body {
 
 #Create:hover{
 	cursor: pointer;
-	color: #323232;
+	color: #1D2731;
 }
 .Header a:hover {
   cursor: pointer;
-	color: #323232;
+	color: #D9B310;
 }
 
 .HamburgerIcon {
@@ -196,14 +196,14 @@ body {
 
 
 .DropDownContent{
-display: none;
-position: absolute;
-top: 4.5rem;
-right: 8%;
-min-width: 160px;
-background: white;
-box-shadow: 0px 0px 8px #ccc;
-z-index: 1;
+	display: none;
+	position: absolute;
+	top: 4.5rem;
+	right: 8%;
+	min-width: 160px;
+	background: white;
+	box-shadow: 0px 0px 8px #ccc;
+	z-index: 1;
 }
 
 .DropDownContent div{
@@ -478,8 +478,8 @@ cursor: pointer;
 	height: 9em;
 	width: auto;
 	margin-top: 28px;
-	border-top: 4px solid  #FFF800;
-	background: rgba(7, 170, 175, 1);
+	border-top: 4px solid  #D9B310;
+	background: #0B3C5D;
 }
 
 .Footer ul {
@@ -510,5 +510,5 @@ cursor: pointer;
 }
 
 .Footer h3:hover {
-	color: #323232;
+	color: #D9B310;
 }

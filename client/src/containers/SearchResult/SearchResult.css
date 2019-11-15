@@ -1,0 +1,104 @@
+
+.SearchPage h3{
+    display: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.SearchButtonWrapper{
+    display: block;
+    margin: 3px 0 30px 50%;
+}
+
+.SearchLessons h1{
+    display: block;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.SearchLessons{
+    display: block;
+    margin: 0 3%;
+    width: auto;
+    background: white;
+    padding: 2% 0 2% 0;
+    box-shadow: 0px 0px 4px #ccc;
+    text-align: center;
+  }
+
+.BackButtonSearch{
+  display: block;
+  margin: 2px 0 0 3%;
+  justify-content: center;
+  font-weight: lighter;
+  width: 110px; 
+  height: 40px; 
+  border: 1px solid #eee;
+  border-radius: 2px;
+  background-color: white;
+  font-size: 18px;
+  color: black;
+  transition: 0.2s ease-in;
+}
+.BackButtonSearch:hover{
+  cursor: pointer;
+	color: #00c4c3;
+	border: 1px solid #ccc;
+	box-shadow: 0px 1px 2px 0px #eee;
+}
+
+.FetchMoreButton{
+  background: none;
+  border: none;
+}
+.FetchMoreButton:focus{
+  outline:none;
+}
+.SearchButton {
+    width: 139px;
+    height: 45px;
+    margin: 3px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    clear: left;
+    background: #00c4c3;
+    color: white;
+    border: none;
+  }
+  
+  .SearchButton:hover {
+    color: black;
+    border: initial;
+  }
+  
+  
+  
+  .SearchButton:disabled {
+    background: #00c4c3;
+    opacity: .5;
+    color: black;
+  }
+
+  @media screen and (max-width: 640px) {
+
+    .SearchButtonWrapper{
+        margin: 8px auto;
+    }
+    .SearchButton {
+      width: 110px;
+      height: 40px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
+      background: #00c4c3;
+    }
+    .SearchLessons {
+      width: 100%;
+      margin: auto;
+    }
+
+    .SearchLessons h1{
+        font-size: 25px;
+        margin: 12px auto 22px;
+    }
+  }

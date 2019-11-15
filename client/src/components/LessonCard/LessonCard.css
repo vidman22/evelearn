@@ -1,0 +1,152 @@
+.LessonCardTab{
+    box-sizing: border-box;
+    margin: 12px;
+    height: 230px;
+    width: 200px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    background: white; /* #23a8d496; */
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.1s ease-in;
+    /* padding-bottom: 22px; */
+}
+
+.LessonCardContainer{
+    display: block;
+    position: relative;
+}
+
+.LessonLinks a{
+    margin: none;
+    width: 0;
+	text-decoration: none;
+	text-decoration-color: black;
+	text-decoration-style: none;
+}
+
+.CardSentences{
+    /* display: flex;
+    flex-direction: column;
+    background: white;
+    height: 95px;
+    width: 140px;
+    margin: -105px auto 0 auto;
+    box-shadow: 0 0 10px #eee; */
+    overflow: hidden;
+    visibility: hidden;
+    /* transition: 0.3s; */
+}
+
+.CardSentenceInline{
+   margin: 2px;   
+}
+
+.CardSentences hr{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+#smallTitle{
+    font-size: 10px;
+    margin: 12px auto 0 auto;
+}
+
+#smallFirstSentence {
+    display: inline;
+    margin: 0;
+}
+
+#smallSecondSentence {
+	display: inline-block;
+}
+
+#smallHint{
+    display: inline;
+    color: #00c4c3;
+}
+
+.CardSentenceInline p{
+    font-family: 'Open Sans', sans-serif;
+    word-break: break-word;
+    font-size: 8px;
+    line-height: 0px;
+    padding: 0;
+    display: inline;
+    color: black;
+    margin: 0px 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.BottomSegment{
+    position: absolute;
+    top: 190px;
+    width: 100%;
+    border-top: 1px solid #eee;
+}
+
+/* .TopSquare{
+    height: 180px;
+} */
+
+.QuizIcon{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    fill: #23a7d4;
+    height: 170px;
+    transition: 0.4s ease-in;
+    transform: rotate(130deg);
+}
+
+
+.LessonCardTab:hover {
+    box-shadow: 0px 4px 8px #ccc;
+	cursor: pointer;
+	color: black;
+}
+
+.LessonCardTab:hover .QuizIcon{
+    fill: #23d2ae;
+    -ms-transform: rotate(-0deg); /* IE 9 */
+    -webkit-transform: rotate(-0deg); /* Safari prior 9.0 */
+    transform: rotate(-0deg); /* Standard syntax */
+  }
+
+/* .LessonCardTab:hover .CardSentences{
+    visibility: visible;
+} */
+
+.LessonCardTitle {
+    position: absolute;
+    top: 77px;
+    width: 170px;
+    left: 15px;
+}
+
+#LessonCardInner{
+	color: black;
+    font-size: 18px;
+    font-weight: 300;
+	text-align: center;
+}
+
+.CreatedCardDate {
+    /* position: relative; */
+    color: #ccc;
+    font-weight: 300;
+	font-size: 12px;
+}
+
+.LessonCardAuthor {
+    /* position: relative; */
+	margin: 0 4px;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+	color: #ccc;
+}
+
+

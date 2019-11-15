@@ -1,0 +1,46 @@
+.PrivacyWrapper{
+    display: block;
+    margin: 0 55px;
+}
+
+.PrivacyWrapper h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.PrivacyWrapper p, li{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.ContactWrapper{
+    display: block;
+    margin: 0 55px;
+}
+
+.ContactWrapper h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.ContactWrapper p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin-left: 12px;
+}
+
+.AboutWrapper{
+    display: block;
+    margin: 0 55px;
+}
+
+.AboutWrapper h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.AboutWrapper p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin-left: 12px;
+}

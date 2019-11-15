@@ -7,7 +7,7 @@ import { css } from 'emotion';
 import SlateDeepTable from 'slate-deep-table';
 import imageExtensions from 'image-extensions'
 import isUrl from 'is-url'
-import { Button, Toolbar } from '../../components';
+import { Button, Toolbar } from './components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-regular-svg-icons';
 import { faHeading, faUnderline, faListUl, faListOl, faItalic, faBold, faQuoteLeft, faHighlighter, faTable, faCode } from '@fortawesome/free-solid-svg-icons';

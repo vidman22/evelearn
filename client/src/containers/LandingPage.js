@@ -1,33 +1,22 @@
 import React, { Component } from 'react';
 import { NavLink, Link, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import logo from "../assets/svg/kwinzo.svg";
 import './LandingPage.css';
 import * as actions from '../store/actions';
-import AuthModal from '../components/AuthModal/AuthModal';
+import AuthModal from '../components/Modals/AuthModal/AuthModal';
 import Backdrop from '../components/Backdrop/Backdrop';
-import ClassPage from './ClassPage/ClassPage';
-import CreateLesson from './CreateLesson/CreateLesson';
-import CreateModal from '../components/CreateLessonModal/CreateLessonModal';
-import CreateReadingLesson from './CreateReadingLesson/CreateReadingLesson';
+import CreateFillInTheBlank from './CreateFillInTheBlank/CreateFillInTheBlank';
+import CreateReading from './CreateReading/CreateReading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch, faCaretDown, faUserCircle, faBars} from '@fortawesome/free-solid-svg-icons';
-import Quiz from './Quiz/Quiz';
-import Lessons from './Lessons/Lessons';
-import Privacy from '../components/Privacy/Privacy';
-import Features from '../components/Features/Features';
-import Contact from '../components/Contact/Contact';
-import About from '../components/About/About';
+import FillInTheBlank from './FillInTheBlank/FillInTheBlank';
+import Privacy from '../components/FooterPages/Privacy';
+import Contact from '../components/FooterPages/Contact';
+import About from '../components/FooterPages/About';
 import ReadingLesson from './ReadingLesson/ReadingLesson';
 import SearchResult from './SearchResult/SearchResult';
 import Stripe from './Stripe/Stripe';
-
-// import {faStar} from '@fortawesome/free-regular-svg-icons';
-// import {faMinusSquare} from '@fortawesome/free-regular-svg-icons';
-
-import SoloGame from './SoloGame/SoloGame';
 import UserPage from './UserPage/UserPage';
-import WaitingPage from './WaitingPage/WaitingPage';
 
 
 class LandingPage extends Component {
@@ -36,7 +25,6 @@ class LandingPage extends Component {
     this.state = {
       authModal: false,
       authType: 'login',
-      createModal: false,
       displayMenuStyle: 'NavClose',
       searchBar: true,
       searchCompleteString: '',
@@ -45,13 +33,9 @@ class LandingPage extends Component {
       loginMode: false,
     }
     
-    this.toggleCreateModal = this.toggleCreateModal.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
     this.toggleLogin = this.toggleLogin.bind(this)
     this.input = React.createRef();
-    this.Lessons = () => {
-     return <Lessons user={this.props.user} sendclass={(name)=>this.sendClass(name)} /> 
-    }
   }
 
   componentDidMount() {
@@ -71,13 +55,6 @@ class LandingPage extends Component {
           authType: type
         }
       });
-  }
-
-  toggleCreateModal() {
-  
-    this.setState( prevState => {
-      return { createModal: !prevState.createModal }
-    });
   }
 
   searchSubmit(e){
@@ -132,12 +109,8 @@ class LandingPage extends Component {
                         pathname: '/'
                     }}exact> 
                    
-                      <div className="HeaderBrand">Kwinz</div>
+                      <div className="HeaderBrand">eveLearn</div>
                       <div className="LogoImage">
-                        <img
-                          src={logo}
-                          alt="logo" 
-                        />
                       </div>
                     </NavLink>
                     
@@ -149,7 +122,7 @@ class LandingPage extends Component {
                             placeholder="Search..."/><button type="submit"><FontAwesomeIcon color="#eee" size="2x" icon={faSearch} /></button></form></div>
                         : null}
                         
-                                 <button id="Create" onClick={this.toggleCreateModal}>Create</button>
+                                 <button id="Create">Create</button>
                     
                                   {this.props.user ?
                                     <div className="UserDropDown">
@@ -162,7 +135,7 @@ class LandingPage extends Component {
                                             alt="Logged In" /> :  <FontAwesomeIcon className="UserPicture" onClick={(type) => this.toggleModal('login')} color="#eee" size="3x" icon={faUserCircle} /> }
                                     <div className="DropDownContent">
                                       <div onClick={() => this.logout()}>Log Out</div>
-                                      <div onClick={(type) => this.toggleModal('pay')}>Go Kwinzo Pro</div>
+                                      <div onClick={(type) => this.toggleModal('pay')}>Go Pro</div>
                                     </div>
                                 </div>
                                     :    
@@ -172,7 +145,7 @@ class LandingPage extends Component {
                         <div className="MobileWrapper">
                           <div className={cssClasses.join(' ')}>
                              
-                             <div className="MobileLogin" onClick={this.toggleCreateModal}>Create</div>
+                             <div className="MobileLogin">Create</div>
                       
 
                              <div className="MobileLink"><Link
@@ -191,33 +164,28 @@ class LandingPage extends Component {
                         </div>
 
                 </header>
-                { this.state.createModal ? <CreateModal togglemodal={this.toggleCreateModal} show={this.state.createModal} /> : null}
-               { this.state.authModal ? <AuthModal togglemodal={(type) => this.toggleModal('login')} type={this.state.authType} loginmode={this.state.loginMode} togglelogin={this.toggleLogin} show={this.state.authModal} /> : null}
-               { this.state.authModal ? <Backdrop show={this.state.authModal} togglemodal={(type) => this.toggleModal('login')} /> : null}
-               { this.state.createModal ? <Backdrop show={this.state.createModal} togglemodal={this.toggleCreateModal} /> : null}
               
-               <Switch> 
+              { this.state.authModal ? <AuthModal togglemodal={(type) => this.toggleModal('login')} type={this.state.authType} loginmode={this.state.loginMode} togglelogin={this.toggleLogin} show={this.state.authModal} /> : null}
+              { this.state.authModal ? <Backdrop show={this.state.authModal} togglemodal={(type) => this.toggleModal('login')} /> : null}
+              
+              
+              <Switch> 
   
-                <Route path="/create-reading/" render={() => <CreateReadingLesson togglemodal={(type) => this.toggleModal('login')}/> } />
-                <Route path="/create-quiz/" render={() => <CreateLesson togglemodal={(type) => this.toggleModal('login')}/> } />
+                <Route path="/create-reading/" render={() => <CreateReading togglemodal={(type) => this.toggleModal('login')}/> } />
+                <Route path="/create-fill-in-the-blank/" render={() => <CreateFillInTheBlank togglemodal={(type) => this.toggleModal('login')}/> } />
                 <Route path="/search/:id" render={() => <SearchResult handlesearch={(e) => this.handleSearch(e)} value={this.state.searchCompleteString} />} />
-                <Route path="/quiz/:id" render={() => <Quiz togglemodal={(type) => this.toggleModal('login')} test={false} /> } />
+                <Route path="/fill-in-the-blank/:id" render={() => <FillInTheBlank togglemodal={(type) => this.toggleModal('login')} test={false} /> } />
                 <Route path="/reading/:id" component={ReadingLesson} />
-                <Route path="/solo-play/:id" render={() => <SoloGame lesson= {this.props.lesson} /> } />
-                <Route path="/lessons" component={() => <Lessons user={this.props.user} sendclass={(clazz)=>this.sendClass(clazz)} /> } />
-                <Route path="/class/:id" component={() => <ClassPage class={this.state.class}  />} /> 
-                <Route path="/host-game/:id" render={() => <WaitingPage lesson= {this.props.lesson} /> } />
-                <Route path="/test/:id/:class" render={() => <Quiz togglemodal={(type) => this.toggleModal('login')} test={true} /> } />
+                <Route path="/test/:id/:class" render={() => <FillInTheBlank togglemodal={(type) => this.toggleModal('login')} test={true} /> } />
                 <Route path="/privacy" component={Privacy} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/about" component={About} />
-                <Route path="/features" component={Features} />
                 <Route path="/upgrade" component={Stripe} />
                 
                 <Route path="/" component={this.Lessons}/>
                 {this.props.user ? <Route path="/user" component={() => <UserPage  user={this.props.user} />} /> 
                 : <Route path="/" component={this.Lessons} />} />}
-               </Switch>
+              </Switch>
                
             <footer className="Footer">
                     <ul>

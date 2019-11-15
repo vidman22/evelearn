@@ -7,10 +7,10 @@ import parse from 'html-react-parser';
 import { Query, graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
-import DeleteModal from '../../components/DeleteModal/DeleteModal';
+import DeleteModal from '../../components/Modals/DeleteModal/DeleteModal';
 import InsertTextButton from '../../components/InsertTextButton/InsertTextButton';
 import ReadingOmission from '../../components/ReadingOmission/ReadingOmission';
-import OmissionWithOptions from '../../components/OmissionWithOptions/OmissionWithOptions';
+import OmissionWithOptions from '../../components/ReadingOmissionWithOptions/ReadingOmissionWithOptions';
 import ReadingCompQuestion from '../../components/ReadingCompQuestion/ReadingCompQuestion';
 import ReadingTable from '../../components/ReadingTable/ReadingTable';
 import ReactTimer from '../../components/ReactTimer/ReactTimer';
