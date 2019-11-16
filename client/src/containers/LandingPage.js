@@ -5,6 +5,8 @@ import './LandingPage.css';
 import * as actions from '../store/actions';
 import AuthModal from '../components/Modals/AuthModal/AuthModal';
 import Backdrop from '../components/Backdrop/Backdrop';
+import CreateCourse from './CreateCourse/CreateCourse';
+import CreateLanding from './CreateLanding/CreateLanding';
 import CreateFillInTheBlank from './CreateFillInTheBlank/CreateFillInTheBlank';
 import CreateReading from './CreateReading/CreateReading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -109,7 +111,7 @@ class LandingPage extends Component {
                         pathname: '/'
                     }}exact> 
                    
-                      <div className="HeaderBrand">eveLearn</div>
+                      <div className="HeaderBrand"><span id="eve">eve</span>Learn</div>
                       <div className="LogoImage">
                       </div>
                     </NavLink>
@@ -122,7 +124,9 @@ class LandingPage extends Component {
                             placeholder="Search..."/><button type="submit"><FontAwesomeIcon color="#eee" size="2x" icon={faSearch} /></button></form></div>
                         : null}
                         
-                                 <button id="Create">Create</button>
+                                 <Link to={{
+                                    pathname: '/create'
+                                  }} id="Create">Create</Link>
                     
                                   {this.props.user ?
                                     <div className="UserDropDown">
@@ -171,8 +175,10 @@ class LandingPage extends Component {
               
               <Switch> 
   
-                <Route path="/create-reading/" render={() => <CreateReading togglemodal={(type) => this.toggleModal('login')}/> } />
-                <Route path="/create-fill-in-the-blank/" render={() => <CreateFillInTheBlank togglemodal={(type) => this.toggleModal('login')}/> } />
+                <Route path="/create" component={CreateLanding} />
+                <Route path="/course/:id" component={CreateCourse} />
+                <Route path="/create-reading" render={() => <CreateReading togglemodal={(type) => this.toggleModal('login')}/> } />
+                <Route path="/create-fill-in-the-blank" render={() => <CreateFillInTheBlank togglemodal={(type) => this.toggleModal('login')}/> } />
                 <Route path="/search/:id" render={() => <SearchResult handlesearch={(e) => this.handleSearch(e)} value={this.state.searchCompleteString} />} />
                 <Route path="/fill-in-the-blank/:id" render={() => <FillInTheBlank togglemodal={(type) => this.toggleModal('login')} test={false} /> } />
                 <Route path="/reading/:id" component={ReadingLesson} />

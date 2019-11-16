@@ -1,0 +1,48 @@
+.CreateCourse{
+    width: 80%;
+    margin: auto;
+}
+
+.CreateCourse h1{
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: .5px solid #ccc;
+    font-weight: 400;    
+    margin-bottom: 0;
+}
+.CreateCourse h4{
+    font-family: 'Nunino Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 0 0 0 8px;   
+}
+
+.CreateCourse h2{
+    font-family: 'Nunino Sans', sans-serif;
+    font-weight: 300;    
+}
+
+.CreateLessonCard{
+    width: 40%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 4px 40px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Ubuntu', sans-serif;
+    color: #00a2ff;
+}
+
+.CreateLessonCard p{
+    position: absolute;
+    color: black;
+    left: 220px;
+    margin: 8px 0 auto 60px;    
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.CreateLessonCard:hover{
+    cursor: pointer;
+    box-shadow: 0 0 6px 4px #eee;
+}

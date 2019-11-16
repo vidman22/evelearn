@@ -37,6 +37,7 @@ export class Button extends Component {
         let active = false;
         let color = 'black';
         if (this.props.insertTexts && this.props.insertTexts.byId && this.props.insertTexts.byId[`formIndex${formIndex}`]){
+            // eslint-disable-next-line
             if (this.props.insertTexts.byId[`formIndex${formIndex}`].activeIndex == this.props.insertIndex){
                 active = true;
             }

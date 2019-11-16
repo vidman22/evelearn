@@ -1,0 +1,50 @@
+.CreateLanding{
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.CreateLanding h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.CreateCourseInput{
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    width:70%;
+    margin: 37px 0 45px 4%;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    background: none;
+    height:36px;
+    line-height:36px;
+    font-size:26px;
+    border-bottom:solid 2px lightgrey;
+    transition:all .23s ease-in
+}
+
+#language{
+    width: 20%;
+}
+
+.CreateCourseTextArea{
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    width:70%;
+    resize: none;
+    margin: 37px 0 45px 4%;
+    background: none;
+    height:96px;
+    line-height:36px;
+    font-size:18px;
+    border-radius: 4px;
+    border: solid 1px lightgrey;
+    transition:all .23s ease-in
+}
+
+.CreateCourseInput:focus {
+    outline: none;
+    border-bottom:solid 2px #EDE711;
+  }
