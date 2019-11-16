@@ -7,11 +7,11 @@ import AuthModal from '../components/Modals/AuthModal/AuthModal';
 import Backdrop from '../components/Backdrop/Backdrop';
 import CreateCourse from './CreateCourse/CreateCourse';
 import CreateLanding from './CreateLanding/CreateLanding';
-import CreateFillInTheBlank from './CreateFillInTheBlank/CreateFillInTheBlank';
+import CreateQuiz from './CreateQuiz/CreateQuiz';
 import CreateReading from './CreateReading/CreateReading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch, faCaretDown, faUserCircle, faBars} from '@fortawesome/free-solid-svg-icons';
-import FillInTheBlank from './FillInTheBlank/FillInTheBlank';
+import Quiz from './Quiz/Quiz';
 import Privacy from '../components/FooterPages/Privacy';
 import Contact from '../components/FooterPages/Contact';
 import About from '../components/FooterPages/About';
@@ -177,12 +177,14 @@ class LandingPage extends Component {
   
                 <Route path="/create" component={CreateLanding} />
                 <Route path="/course/:id" component={CreateCourse} />
+                <Route path="/create-listening" render={() => <CreateQuiz togglemodal={(type) => this.toggleModal('login')}/> } />
+                <Route path="/create-quiz" render={() => <CreateQuiz togglemodal={(type) => this.toggleModal('login')}/> } />
                 <Route path="/create-reading" render={() => <CreateReading togglemodal={(type) => this.toggleModal('login')}/> } />
-                <Route path="/create-fill-in-the-blank" render={() => <CreateFillInTheBlank togglemodal={(type) => this.toggleModal('login')}/> } />
                 <Route path="/search/:id" render={() => <SearchResult handlesearch={(e) => this.handleSearch(e)} value={this.state.searchCompleteString} />} />
-                <Route path="/fill-in-the-blank/:id" render={() => <FillInTheBlank togglemodal={(type) => this.toggleModal('login')} test={false} /> } />
+                <Route path="/listening/:id" render={() => <Quiz togglemodal={(type) => this.toggleModal('login')} test={false} /> } />
+                <Route path="/quiz/:id" render={() => <Quiz togglemodal={(type) => this.toggleModal('login')} test={false} /> } />
                 <Route path="/reading/:id" component={ReadingLesson} />
-                <Route path="/test/:id/:class" render={() => <FillInTheBlank togglemodal={(type) => this.toggleModal('login')} test={true} /> } />
+                <Route path="/test/:id/:class" render={() => <Quiz togglemodal={(type) => this.toggleModal('login')} test={true} /> } />
                 <Route path="/privacy" component={Privacy} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/about" component={About} />

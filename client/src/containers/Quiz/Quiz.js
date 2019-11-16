@@ -8,14 +8,14 @@ import gql from 'graphql-tag';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPlusCircle,faStar,faShareSquare, faTimes} from '@fortawesome/free-solid-svg-icons';
 import {faTimesCircle} from '@fortawesome/free-regular-svg-icons';
-import CreateLesson from '../CreateLesson/CreateLesson';
+import CreateQuiz from '../CreateQuiz/CreateQuiz';
 import DeleteModal from '../../components/Modals/DeleteModal/DeleteModal';
 import Sentence from '../../components/Sentence/Sentence';
+import * as actionTypes from '../../store/actionTypes';
 
 import './Quiz.css';
 
 
-import * as actionTypes from '../../store/actionTypes';
 
 const QUIZ = gql`
   query($uniqid: String!){
@@ -361,7 +361,7 @@ class Quiz extends Component {
           </div>
         );
      }}
-      </Query> ) : <CreateLesson 
+      </Query> ) : <CreateQuiz
                       editmode={this.state.editMode} 
                       back={() => this.editMode()} 
                       sentences={this.state.sentences} 
