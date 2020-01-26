@@ -154,7 +154,7 @@ checkFormValidity = () => {
 }
 
 completed(data){
-      this.props.history.push(`/course/${data.createCourse.uniqid}`);
+      this.props.history.push(`/create-course/${data.createCourse.uniqid}`);
 }
 
   render() {

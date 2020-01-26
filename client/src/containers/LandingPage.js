@@ -176,12 +176,12 @@ class LandingPage extends Component {
               <Switch> 
   
                 <Route path="/create" component={CreateLanding} />
-                <Route path="/course/:id" component={CreateCourse} />
+                <Route path="/create-course/:id" component={CreateCourse} />
                 <Route path="/create-listening" render={() => <CreateQuiz togglemodal={(type) => this.toggleModal('login')}/> } />
                 <Route path="/create-quiz" render={() => <CreateQuiz togglemodal={(type) => this.toggleModal('login')}/> } />
                 <Route path="/create-reading" render={() => <CreateReading togglemodal={(type) => this.toggleModal('login')}/> } />
                 <Route path="/search/:id" render={() => <SearchResult handlesearch={(e) => this.handleSearch(e)} value={this.state.searchCompleteString} />} />
-                <Route path="/listening/:id" render={() => <Quiz togglemodal={(type) => this.toggleModal('login')} test={false} /> } />
+                <Route path="/listening/:id" render={() => <Quiz togglemodal={(type) => this.toggleModal('login')} test={false} /> } />s
                 <Route path="/quiz/:id" render={() => <Quiz togglemodal={(type) => this.toggleModal('login')} test={false} /> } />
                 <Route path="/reading/:id" component={ReadingLesson} />
                 <Route path="/test/:id/:class" render={() => <Quiz togglemodal={(type) => this.toggleModal('login')} test={true} /> } />

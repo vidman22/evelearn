@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Prompt, withRouter } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
+// import { CSSTransition } from 'react-transition-group';
 import { Value, Mark} from 'slate';
 import Slate from '../Slate/Slate';
 import InputReadingOmission from '../../components/InputReadingOmission/InputReadingOmission';
@@ -40,7 +40,7 @@ const initialValue = Value.fromJSON({
     }
 });
 
-class CreateReadingLesson extends Component {
+class CreateReading extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
@@ -1284,11 +1284,11 @@ class CreateReadingLesson extends Component {
   	}
 
   	completed = (data) => {
-      	this.props.history.push(`/reading/${data['createReadingLesson'].uniqid}`);
+      	this.props.history.push(`/reading/${data['createReading'].uniqid}`);
   	}
     
     back = () => {
-      this.props.history.push('/create-lesson');
+      this.props.history.push('/create');
 	}
 
 	createTable = (formIndex) => {
@@ -1311,7 +1311,14 @@ class CreateReadingLesson extends Component {
 			
 			for (let j = 0; j < updatedTable[i].length; j++){
 				// console.log("property", j);
-				children.push(<td key={j}><input type="text" className="ReadingQuestionTableInput" onChange={(event) => this.tableInput(event, formIndex, i, j)} value={this.state.lessonFormArray[formIndex].table[i][j].value} /></td>)
+				children.push(<td key={j}>
+					<input 
+						type="text" 
+						className="ReadingQuestionTableInput" 
+						onChange={(event) => this.tableInput(event, formIndex, i, j)} 
+						value={this.state.lessonFormArray[formIndex].table[i][j].value} />
+					</td>
+					)
 			}
 
 			table.push(<tr key={i}>{children}</tr>)
@@ -1539,6 +1546,7 @@ class CreateReadingLesson extends Component {
 
 		
       	let form = (
+		
           <Mutation
             mutation={ADD_COMP_LESSON}
             onCompleted={data => this.completed(data)}>
@@ -1546,29 +1554,26 @@ class CreateReadingLesson extends Component {
                 <form 
                   onSubmit={e => {
                     e.preventDefault();
-                    if (!this.props.user) {
-                        this.props.togglemodal();
-                      } else {
+                    
 							const value = this.ref.current.value;
                         	const title = this.state.title.value;
 							const text = JSON.stringify(value.toJSON());
-  							const authorID = this.props.user.id;
+  							// const authorID = this.props.user.id;
  							const data = this.formData();
 							
   							mutation({
   								variables: {
   									title,
-  									authorID,
   									text,
   									elements: data
   								}
   							});
-  						}
+  					
                   }}>
-				<CSSTransition
+				{/* <CSSTransition
 					transitionName="addandremove"
 					transitionEnterTimeout={400}
-					transitionLeaveTimeout={300}>
+					transitionLeaveTimeout={300}> */}
                 {formArray.map((formElement) => {
                   return (
 
@@ -1629,24 +1634,6 @@ class CreateReadingLesson extends Component {
                             </div>
 							
                         </div>
-							{/*formElement.config.highlight.show ? (
-							<div className="InputHighlightWrapper">
-								<input
-									className="InputHighlight"
-									type="text"
-									value={formElement.config.highlight.value}
-									onChange={(event)=> this.inputChangedHandler(event, 'highlight', formElement.id)}
-									placeholder="Highlighted text"
-								/>
-								<MinusSVG classname="RemoveOption" onclick={() => this.toggleHighlight(formElement.id)} />
-									<p className="Message">{formElement.config.highlight.validation.msg}</p>
-							</div>
-							): 
-							<button
-								type="button" 
-								onClick={()=> this.toggleHighlight(formElement.id)} 
-								className="AddHighlight">Add Highlight
-							</button>*/}
               		    </div>
 											
 						)}
@@ -1776,7 +1763,7 @@ class CreateReadingLesson extends Component {
 							<FontAwesomeIcon icon={faPlusCircle} onclick={() => this.addAnswer(formElement.id)} />
                             </div>
 							
-                        </div>
+                        		</div>
 								</div>
 
 							)}
@@ -1787,12 +1774,13 @@ class CreateReadingLesson extends Component {
             		</div>
             		)
 				  })}
-				</CSSTransition>
+				{/* </CSSTransition> */}
             <div className="ExerciseButton" onClick={() => this.addForm()}>Add</div>
             <button className="CreateButton" type="submit" disabled={!this.state.formIsValid}>Create</button>
             </form>
             )}
           </Mutation>
+		  
         );
       		
 
@@ -1803,7 +1791,6 @@ class CreateReadingLesson extends Component {
             		when={this.state.formIsHalfFilledOut}
             		message="Are you sure you want to leave?"
           		/>
-          		{/*<button className="ToggleReadingMode" onClick={(e)=> this.toggleMode(e)}>{this.state.readingModeOmission ? 'Switch to Comprehension Mode' : 'Switch to Gap Reading Mode' }</button>*/}
           		<input
             		className="LessonTitleInput"
             		value={this.state.title.value}
@@ -1826,8 +1813,8 @@ class CreateReadingLesson extends Component {
 
 
 const ADD_COMP_LESSON = gql`
-  mutation CreateReadingLesson($title: String!, $authorID: Int!, $text: String!, $elements: String) {
-    createReadingLesson( title: $title, authorID: $authorID, text: $text, elements: $elements) {
+  mutation CreateReading($title: String!, $authorID: Int!, $text: String!, $elements: String) {
+    createReading( title: $title, authorID: $authorID, text: $text, elements: $elements) {
       	created_at
       	title
       	authorID
@@ -1843,5 +1830,5 @@ const mapStateToProps = state => {
   }
 }
 
-const Container = withRouter(CreateReadingLesson);
+const Container = withRouter(CreateReading);
 export default connect(mapStateToProps)(Container);

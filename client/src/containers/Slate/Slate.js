@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Plain from 'slate-plain-serializer'
-import { Editor,getEventTransfer } from 'slate-react';
+import { Editor, getEventTransfer } from 'slate-react';
 import {isKeyHotkey} from 'is-hotkey';
 import { Block  } from 'slate';
 import { css } from 'emotion';
@@ -62,9 +62,9 @@ const isItalicHotkey = isKeyHotkey('mod+i')
 const isUnderlineddHotkey = isKeyHotkey('mod+u')
 const isCodeHotkey = isKeyHotkey('mod+`')
 
-// Define our app...
-export default class Slate extends React.Component {
-    // Set the initial value when the app is first constructed.
+
+export default class Slate extends Component {
+    
     constructor(props){
       super(props);
       this.state = {
@@ -166,7 +166,6 @@ export default class Slate extends React.Component {
       return value.blocks.some(node => node.type === type)
     }
   
-    // Render the editor.
     render() {
       
       const {value} = this.props;
